@@ -7,6 +7,8 @@ from PseudoStockArchiveApp.helpers import writeDailySeriesToDb
 def getCompanies(request):
     skip = int(request.GET.get('skip', '0'))
     limit = int(request.GET.get('limit', '30'))
+    if skip < 0 or limit < 0:
+        return HttpResponse()
     try:
         companies = Company.objects.all()[skip:skip + limit]
         serializer = CompanySerializer(companies, many=True)

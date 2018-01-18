@@ -3,3 +3,5 @@ stockArchive
 companiesdata.xlsx
 data.csv
 data1.csv
+PseudoStockArchiveApp/__pycache__/
+PseudoStockArchiveApp/migrations/__pycache__/
