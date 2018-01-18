@@ -16,19 +16,19 @@ for row in allRows:
 
 print('Company data added')
 
-with open('/Users/madhusudhan/MyCoding/Python/PseudoStockArchive/data.csv', 'r') as csvfile:
-    reader = csv.reader(csvfile)
-    row1 = next(reader)
-    for row in reader:
-        print(row[0], row[1])
-        try:
-            company = Company.objects.get(symbol=row[1])
-            try:
-                timestamp = datetime.strptime(row[0], "%Y-%m-%d %H:%M:%S")
-            except Exception:
-                timestamp = datetime.strptime(row[0], "%Y-%m-%d")
-            tradingData = TradingData(timestamp=timestamp, company=company, open=float(row[2]), close=float(row[3]),
-                                      low=float(row[4]), high=float(row[5]), volume=float(row[6]))
-            tradingData.save()
-        except Exception:
-            pass
+# with open('/Users/madhusudhan/MyCoding/Python/PseudoStockArchive/data.csv', 'r') as csvfile:
+#     reader = csv.reader(csvfile)
+#     row1 = next(reader)
+#     for row in reader:
+#         print(row[0], row[1])
+#         try:
+#             company = Company.objects.get(symbol=row[1])
+#             try:
+#                 timestamp = datetime.strptime(row[0], "%Y-%m-%d %H:%M:%S")
+#             except Exception:
+#                 timestamp = datetime.strptime(row[0], "%Y-%m-%d")
+#             tradingData = TradingData(timestamp=timestamp, company=company, open=float(row[2]), close=float(row[3]),
+#                                       low=float(row[4]), high=float(row[5]), volume=float(row[6]))
+#             tradingData.save()
+#         except Exception:
+#             pass
