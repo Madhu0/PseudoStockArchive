@@ -11,10 +11,8 @@ def writeDailySeriesToDb(text):
     for key in timeSeriesData.keys():
         value = timeSeriesData[key]
         timestamp=datetime.strptime(key, "%Y-%m-%d")
-        try:
-            TradingData.objects.filter(timestamp=timestamp, company__symbol=symbol)
-        except Exception as error:
-            print(error)
+        results = TradingData.objects.filter(timestamp=timestamp, company__symbol=symbol)
+        if not results or results.count() == 0:
             tradingData = TradingData(timestamp=timestamp, open=float(value['1. open']), close=float(value['4. close']), low=float(value['3. low']), high=float(value['2. high']), volume=float(value['5. volume']), company=company)
             print("Saving data", tradingData)
             tradingData.save()

@@ -2,8 +2,9 @@ import csv
 from datetime import datetime
 from PseudoStockArchiveApp.models import Company, TradingData
 from openpyxl import load_workbook
+import os
 
-wb = load_workbook('/Users/madhusudhan/MyCoding/Python/PseudoStockArchive/companiesdata.xlsx', read_only=True)
+wb = load_workbook(os.path.abspath('companiesdata.xlsx'), read_only=True)
 ws = wb.get_sheet_by_name(wb.get_sheet_names()[0])
 allRows = ws.rows
 next(allRows)
