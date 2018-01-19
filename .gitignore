@@ -5,3 +5,4 @@ data1.csv
 PseudoStockArchiveApp/__pycache__/
 PseudoStockArchiveApp/migrations/__pycache__/
 PseudoStockArchive/__pycache__/
+sqlitedb
