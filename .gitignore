@@ -7,3 +7,5 @@ PseudoStockArchiveApp/migrations/__pycache__/
 PseudoStockArchive/__pycache__/
 sqlitedb
 PseudoStockArchiveApp/middlewares/__pycache__/
+PseudoStockArchiveApp/__pycache__/
+static/
