@@ -2,6 +2,7 @@ from PseudoStockArchiveApp.serializers import *
 from django.http import HttpResponse, JsonResponse
 from PseudoStockArchiveApp.services import getIntraDaySeries, getDailySeries, getTechnicalIndicator
 from PseudoStockArchiveApp.helpers import writeDailySeriesToDb
+from django.template.loader import *
 
 
 def getCompanies(request):
@@ -50,3 +51,8 @@ def getDailySeriesBySymbol(request):
 def getTechnicalIndicatorBySymbol(request):
     res = getTechnicalIndicator(request.GET)
     return HttpResponse(res, status=200, content_type="application/json")
+
+def getHomePage(request):
+    template = get_template('index.html');
+    res = template.render(request=request)
+    return HttpResponse(res, status=200, content_type="text/html");

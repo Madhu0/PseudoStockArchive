@@ -9,3 +9,5 @@ sqlitedb
 PseudoStockArchiveApp/middlewares/__pycache__/
 PseudoStockArchiveApp/__pycache__/
 static/
+env/
+PseudoStockArchiveApp/static
